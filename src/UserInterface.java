@@ -5,16 +5,20 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
 
 public class UserInterface extends JPanel implements MouseListener, MouseMotionListener
 {
-    public int x, y = 0;
+    public int x, y;
+    private ImageLoader imageLoader;
 
     public UserInterface()
     {
+        x = 0;
+        y = 0;
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
-        ImageLoader imageLoader = new ImageLoader();
+        imageLoader = new ImageLoader();
     }
 
     @Override
@@ -27,6 +31,9 @@ public class UserInterface extends JPanel implements MouseListener, MouseMotionL
         g.setColor(new Color(190, 81, 215));
         g.fillRect(10, 10, 20, 20);
         g.drawString("Test test test", x, y);
+
+        BufferedImage image = imageLoader.blackBishop;
+        g.drawImage(image, x, y, this);
     }
 
     @Override

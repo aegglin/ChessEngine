@@ -4,14 +4,13 @@ import java.io.IOException;
 
 public class ImageLoader
 {
-    private BufferedImage blackBishop, blackKing, blackKnight, blackPawn, blackQueen, blackRook
+    public BufferedImage blackBishop, blackKing, blackKnight, blackPawn, blackQueen, blackRook
             ,whiteBishop, whiteKing, whiteKnight, whitePawn, whiteQueen, whiteRook;
 
     public ImageLoader()
     {
         try
         {
-            System.out.println("Loading!");
             blackBishop = ImageIO.read(getClass().getResourceAsStream("/pieces/blackBishop.png"));
             blackKing = ImageIO.read(getClass().getResourceAsStream("/pieces/blackKing.png"));
             blackKnight = ImageIO.read(getClass().getResourceAsStream("/pieces/blackKnight.png"));
